@@ -1,11 +1,12 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../logo.png";
+import logo from "../images/logo.png";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import { register } from "../redux/actions/register.action";
 import { useHistory } from "react-router-dom";
+import background from "../images/background.jpeg";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");
@@ -33,75 +34,85 @@ const RegisterPage = () => {
   }, [history, isCreated]);
 
   return (
-    <div className="mx-auto p-5 no-repeat center center fixed">
-      <Container className={"d-flex justify-content-center mx-auto"}>
-        <Row>
+    <div
+      className="bg no-repeat center center fixed cover"
+      style={{ backgroundImage: `url(${background})` }}
+    >
+      <Container className={"d-flex mx-auto"}>
+        <Row className="mx-5 px-5">
           <Form
-            className="justify-content-center"
+            className="m-5 p-5 justify-content-center"
             onSubmit={(e) => {
               e.preventDefault();
               dispatch(register(name, email, password));
             }}
           >
-            <img src={logo} alt="logo" className="pb-3" />
+            <img src={logo} alt="logo" className="p-5" />
 
             <Form.Group>
-              <h2 className="text-light">Register</h2>
-              <Form.Text className="text-light">
-                Come for what you love. Stay for what you discover.
-              </Form.Text>
+              <h2 className="text-light">Đăng ký tài khoản</h2>
+              <p className="text-light">
+                "Hãy trở thành sự thay đổi mà bạn muốn nhìn thấy ở thế giới này"
+                - Mahatma Gandhi
+              </p>
             </Form.Group>
 
             <Form.Group>
-              <Row className="p-2">
+              <Row className="p-3 justify-content-center">
                 <Form.Control
+                  className="mx-5"
                   type="name"
                   value={name}
-                  placeholder="Name (Required)"
+                  placeholder="Họ tên (*)"
                   onChange={handleChangeName}
                 ></Form.Control>
-              </Row>
+                <Form.Text className="pb-3 text-mute">
+                  Chúng tôi sẽ sử dụng tên này trong các "Biên bản xác nhận tài
+                  trợ".
+                </Form.Text>
 
-              <Row className="p-2">
                 <Form.Control
+                  className="mx-5"
                   type="email"
                   value={email}
-                  placeholder="Email (Required)"
+                  placeholder="Email (*)"
                   onChange={handleChangeEmail}
                 ></Form.Control>
-              </Row>
+                <Form.Text className="pb-3 text-dark">
+                  Báo cáo tiến độ cùng những câp nhật mới sẽ được gửi đến email
+                  này.
+                </Form.Text>
 
-              <Row className="p-2">
                 <Form.Control
+                  className="mx-5"
                   type="password"
                   value={password}
-                  placeholder="New Password (Required)"
+                  placeholder="Mật khẩu (*)"
                   onChange={handleChangePassword}
                 ></Form.Control>
-                <Form.Text id="passwordHelpBlock" class="text-white">
-                  Must be 8-20 characters long.
+                <Form.Text className="pb-3">
+                  Mật khẩu phải có từ 8 ký tự trở lên.
                 </Form.Text>
-              </Row>
 
-              <Row className="p-2">
-                <Form.Text className="text-light">
-                  By clicking Agree & Join, you agree to the User Agreement,
-                  Privacy Policy, and Cookie Policy.
+                <Form.Text className="text-light mx-5 pb-2">
+                  Bằng việc bấm vào nút "Đồng ý và tham gia", bạn sẽ đồng ý các
+                  Điều khoản dành cho người sử dụng, Chính sách bảo mật dữ liệu
+                  và Chính sách sử dụng cookie tại đây.
                 </Form.Text>
                 <Button
-                  className="mb-2 mt-2 text-dark"
+                  className="m-2 text-dark"
                   variant="warning"
                   type="Register"
                 >
-                  Agree & Join
+                  Đồng ý và tham gia!
                 </Button>
               </Row>
             </Form.Group>
 
             <hr />
-            <h4 className="text-light">Already haved an account?</h4>
+            <h4 className="text-light">Bạn đã có tài khoản?</h4>
             <a href="/login" className="text-light">
-              Log In
+              Đăng nhập{" "}
             </a>
           </Form>
         </Row>
