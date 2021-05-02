@@ -1,15 +1,15 @@
 # FUND4GOOD
 
-# Started on Apr 29 2021 2:30pm by Ha Nguyen
+# Started on Apr 29 2021 2:30pm by Ha Nguyen
 
 Những điều tôi cố gắng làm:
 1/ Đăng nhập, Đăng ký, Thông tin cá nhân
-[x] Người dùng có thể đăng nhập và đăng ký bằng email
+[x] Người dùng có thể đăng nhập và đăng ký bằng email
 [] Người dùng có thể đăng nhập và đăng ký bằng số điện thoại
 [] Người dùng nhận được email xác minh danh tính
 [] Người dùng có thể đăng nhập và đăng ký bằng facebook và google
 [] Người dùng có thể chỉnh sửa thông tin cá nhân (số điện thoại, mã số thuế, bí danh, ảnh đại diện)
-[] Người dùng có thể chọn bí danh là ẩn danh
+[] Người dùng có thể chọn bí danh là ẩn danh
 [] Tên thật dùng để xuất biên bản xác nhận tài trợ, bí danh dùng để hiện trên website
 
 2/ Dự án / Chiến dịch  
@@ -23,7 +23,7 @@ Những điều tôi cố gắng làm:
 [] Sau mỗi lần quyên góp, thành viên nhận được thư cảm ơn chứa biên bản xác nhận tài trợ điện tử
 [] Thành viên có thể xem tổng số tiền mình đã quyên góp
 
-Time-Consumption:
+Time-Consumption:
 on Apr 30: 5 hours
 on May 1: 1.5 hours
 on May 2:
