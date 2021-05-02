@@ -3,9 +3,9 @@ import { Navbar, Nav, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import logo from "../images/logo2.png";
 
-// import SignOut from "./SignOut";
+import SignOut from "./SignOut";
 
-const PublicNavbar = () => {
+const MemberNavBar = () => {
   return (
     <Navbar bg="light" expand="sm" className="justify-content-space-between">
       <Col>
@@ -26,18 +26,16 @@ const PublicNavbar = () => {
               Giới thiệu
             </Nav.Link>
 
-            <Nav.Link as={NavLink} to="/login">
-              Đăng nhập
-            </Nav.Link>
-
-            <Nav.Link as={NavLink} to="/register">
-              Đăng ký
+            <Nav.Link as={NavLink} to="/account">
+              Tài khoản
             </Nav.Link>
           </Nav>
+
+          <SignOut />
         </Navbar.Collapse>
       </Col>
     </Navbar>
   );
 };
 
-export default PublicNavbar;
+export default MemberNavBar;

@@ -5,6 +5,7 @@ const HomePage = () => {
   return (
     <div>
       <PublicNavbar />
+      <h1>HERE IS HOME PAGE </h1>
     </div>
   );
 };

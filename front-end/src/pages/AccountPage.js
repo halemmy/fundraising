@@ -4,14 +4,14 @@ import { Row, Col, Container } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 import SignOut from "../components/SignOut";
-import PublicNavbar from "../components/PaginationBar";
+import MemberNavBar from "../components/MemberNavBar";
 
 const AccountPage = () => {
   const userdata = useSelector((state) => state.auth.auth);
 
   return (
     <div className="mx-auto p-5">
-      <PublicNavbar />
+      <MemberNavBar />
 
       <Container className="p-2">
         <Row className="p-3">

@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import logo from "../images/logo.png";
+import logo from "../images/logo3.png";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Container, Row } from "react-bootstrap";
@@ -50,7 +50,7 @@ const RegisterPage = () => {
             <img src={logo} alt="logo" className="p-5" />
 
             <Form.Group>
-              <h2 className="text-light">Đăng ký tài khoản</h2>
+              <h2 className="text-light">Đăng ký</h2>
               <p className="text-light">
                 "Hãy trở thành sự thay đổi mà bạn muốn nhìn thấy ở thế giới này"
                 - Mahatma Gandhi
@@ -60,48 +60,38 @@ const RegisterPage = () => {
             <Form.Group>
               <Row className="p-3 justify-content-center">
                 <Form.Control
-                  className="mx-5"
+                  className="mx-5 my-2 pb-2"
                   type="name"
                   value={name}
                   placeholder="Họ tên (*)"
                   onChange={handleChangeName}
                 ></Form.Control>
-                <Form.Text className="pb-3 text-mute">
-                  Chúng tôi sẽ sử dụng tên này trong các "Biên bản xác nhận tài
-                  trợ".
-                </Form.Text>
 
                 <Form.Control
-                  className="mx-5"
+                  className="mx-5 my-2 pb-2"
                   type="email"
                   value={email}
                   placeholder="Email (*)"
                   onChange={handleChangeEmail}
                 ></Form.Control>
-                <Form.Text className="pb-3 text-dark">
-                  Báo cáo tiến độ cùng những câp nhật mới sẽ được gửi đến email
-                  này.
-                </Form.Text>
 
                 <Form.Control
-                  className="mx-5"
+                  className="mx-5 my-2 pb-2"
                   type="password"
                   value={password}
-                  placeholder="Mật khẩu (*)"
+                  placeholder="Mật khẩu (*) phải có từ 8 ký tự trở lên."
                   onChange={handleChangePassword}
                 ></Form.Control>
-                <Form.Text className="pb-3">
-                  Mật khẩu phải có từ 8 ký tự trở lên.
-                </Form.Text>
 
-                <Form.Text className="text-light mx-5 pb-2">
+                <p className="text-light mx-5 my-2 py-3">
                   Bằng việc bấm vào nút "Đồng ý và tham gia", bạn sẽ đồng ý các
                   Điều khoản dành cho người sử dụng, Chính sách bảo mật dữ liệu
                   và Chính sách sử dụng cookie tại đây.
-                </Form.Text>
+                </p>
+
                 <Button
-                  className="m-2 text-dark"
-                  variant="warning"
+                  className="m-2 text-light"
+                  variant="info"
                   type="Register"
                 >
                   Đồng ý và tham gia!
@@ -110,10 +100,16 @@ const RegisterPage = () => {
             </Form.Group>
 
             <hr />
-            <h4 className="text-light">Bạn đã có tài khoản?</h4>
-            <a href="/login" className="text-light">
-              Đăng nhập{" "}
-            </a>
+            <div className="pb-5">
+              <h4 className="text-light p-2">Bạn đã có tài khoản?</h4>
+              <a href="/login" className="text-light">
+                Đăng nhập
+              </a>
+              <hr />
+              <a href="/" className="text-light pb-5">
+                Về Trang Chủ
+              </a>
+            </div>
           </Form>
         </Row>
       </Container>
