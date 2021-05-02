@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Col } from "react-bootstrap";
-import { NavLink, Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../logo.png";
 
 // import SignOut from "./SignOut";
@@ -15,20 +15,18 @@ const PublicNavbar = () => {
       </Col>
 
       <Col>
-        <Router>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link as={NavLink} to="/">
-                Trang chủ
-              </Nav.Link>
-              {/* <Nav.Link as={NavLink} to="/account">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link as={NavLink} to="/">
+              Trang chủ
+            </Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/account">
                 Tài khoản
               </Nav.Link>
               <SignOut /> */}
-            </Nav>
-          </Navbar.Collapse>
-        </Router>
+          </Nav>
+        </Navbar.Collapse>
       </Col>
     </Navbar>
   );
