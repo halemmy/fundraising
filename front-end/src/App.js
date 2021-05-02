@@ -10,6 +10,7 @@ import AboutPage from "./pages/AboutPage";
 import CampaignListPage from "./pages/CampaignListPage";
 
 import Footer from "./components/Footer";
+import CampaignDetailPage from "./pages/CampaignDetailPage";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
         <Route path="/register" component={RegisterPage} />
         <Route path="/account" component={AccountPage} />
         <Route path="/about" component={AboutPage} />
-        <Route path="/campaigns" component={CampaignListPage} />
+        <Route path="/campaigns/" component={CampaignListPage} />
+        <Route path="/campaigns/:id" component={CampaignDetailPage} />
       </Switch>
       <Footer />
     </div>

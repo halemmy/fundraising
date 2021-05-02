@@ -1,12 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../images/logo3.png";
+import background from "../images/background.jpeg";
+
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import { register } from "../redux/actions/register.action";
 import { useHistory } from "react-router-dom";
-import background from "../images/background.jpeg";
 
 const RegisterPage = () => {
   const [email, setEmail] = useState("");

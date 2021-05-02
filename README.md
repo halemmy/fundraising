@@ -16,7 +16,7 @@ Những điều tôi cố gắng làm:
 [] Campaign List - Public
 [] HomePage - Public
 
-[] Campaign Site - Public
+[] Campaign Detail Page - Public
 ----[] Mọi người đều có thể:
 ---------[] Xem thông tin dự án và chiến dịch
 ---------[] Thấy số lượng người đã donate và số lượng tiền đã gây được
@@ -37,4 +37,4 @@ Những điều tôi cố gắng làm:
 Time-Consumption:
 on Apr 30: 5.0 hours
 on May 1: 1.5 hours
-on May 2: 5.0 hours
+on May 2: 6.0 hours
