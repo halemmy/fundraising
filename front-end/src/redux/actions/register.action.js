@@ -4,16 +4,16 @@ import api from "../../apiService";
 export const register = (name, email, password) => async (dispatch) => {
   dispatch({ type: types.REGISTER_REQUEST });
   const response = await api.post("/users", {
+    name: name,
     email: email,
     password: password,
-    name: name,
   });
 
   try {
-    if (response.data.success === true) {
+    if (response.success === true) {
       dispatch({
         type: types.REGISTER_SUCCESS,
-        payload: response.data.data.user,
+        payload: response.data,
       });
     }
   } catch (error) {
