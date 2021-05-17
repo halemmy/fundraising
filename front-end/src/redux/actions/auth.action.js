@@ -8,13 +8,13 @@ export const login = (email, password) => async (dispatch) => {
     password: password,
   });
 
-  try {
-    if (response.success === true) {
-      dispatch({ type: types.LOGIN_SUCCESS, payload: response.data });
-    }
-  } catch (error) {
-    dispatch({ type: types.LOGIN_FAILED, payload: error });
+  // try {
+  if (response.success === true) {
+    dispatch({ type: types.LOGIN_SUCCESS, payload: response.data });
   }
+  // } catch (error) {
+  //   dispatch({ type: types.LOGIN_FAILED, payload: error });
+  // }
 };
 
 const LogOut = (dispatch) => {

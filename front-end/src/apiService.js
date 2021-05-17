@@ -14,6 +14,7 @@ api.interceptors.request.use(
   (config) => {
     console.log("Starting Request", config);
     const token = localStorage.getItem("token");
+    console.log(token);
     if (token) {
       config.headers["Authorization"] = "Bearer " + token;
     }
@@ -27,8 +28,8 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     console.log("Response:", response);
-    if (response.data && response.data.data && response.data.data.accessToken) {
-      localStorage.setItem("Token", response.data.data.accessToken);
+    if (response.data && response.data && response.data.accessToken) {
+      localStorage.setItem("token", response.data.accessToken);
     }
     return response;
   },
