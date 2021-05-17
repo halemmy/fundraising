@@ -38,4 +38,4 @@ Time-Consumption:
 on Apr 30: 5.0 hours
 on May 1: 1.5 hours
 on May 2: 6.0 hours
-on May 15: 
+on May 17: 1.0 hour
