@@ -9,13 +9,20 @@ import {
   Container,
   Card,
   Spinner,
-  CardColumns,
+  CardGroup,
   Button,
 } from "react-bootstrap";
+// import numeral from "numeral";
+
+// var number = numeral(1000);
 
 const CampaignListPage = () => {
   const API_URL = process.env.REACT_APP_BACKEND_API;
-  const [campaign, setCampaign] = useState([]);
+  const [campaigns, setCampaigns] = useState([]);
+
+  const [filteredCampaigns, setFilteredCampaigns] = useState([]);
+  const [filterTerm, setFilterTerm] = useState("");
+
   const [loading, setLoading] = useState(false);
   const [error, setErrorMsg] = useState([]);
 
@@ -23,12 +30,13 @@ const CampaignListPage = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        let url = `${API_URL}/campaigns`;
+        let url = `${API_URL}/cause`;
         const response = await fetch(url);
         const data = await response.json();
         if (response.ok) {
           console.log(data);
-          setCampaign(data.results);
+          setCampaigns(data.data);
+          // setFilteredCampaigns(data.results);
         } else {
           setErrorMsg(`FETCH ERROR: ${data.message}`);
         }
@@ -40,21 +48,19 @@ const CampaignListPage = () => {
     fetchData();
   }, [API_URL]);
 
-  const [filteredCampaigns, setFilteredCampaigns] = useState([]);
-  const [filterTerm, setFilterTerm] = useState("");
   useEffect(() => {
-    let newCampaigns = campaign.filter((campaign) =>
+    let newCampaign = campaigns.filter((campaign) =>
       campaign.campaignName.toLowerCase().startsWith(filterTerm)
     );
-    setFilteredCampaigns(newCampaigns);
-  }, [filterTerm, campaign]);
+    setFilteredCampaigns(newCampaign);
+  }, [filterTerm, campaigns]);
 
   return (
     <div>
       <PublicNavBar />
       {/* <SearchBar /> */}
 
-      <Container>
+      <Container className="py-5">
         <Row>
           <Col>
             <p>Tìm kiếm chiến dịch gây quỹ</p>
@@ -75,7 +81,7 @@ const CampaignListPage = () => {
           </Col>
         </Row>
 
-        <CardColumns>
+        <CardGroup>
           {loading ? (
             <Spinner animation="border" role="status">
               <span className="sr-only">Loading...</span>
@@ -95,18 +101,17 @@ const CampaignListPage = () => {
                   </p>
                   <p className="py-0">
                     <small>
-                      <strong>Mục tiêu gây quỹ:</strong>
-                      {campaign.campaignTarget}
-                      <br />
-                      <strong>Mô tả:</strong>
                       {campaign.campaignDescription}
+                      <br />
+                      <strong>Mục tiêu gây quỹ: </strong>
+                      {campaign.campaignTarget} VND
                     </small>
                   </p>
 
                   <Button
                     variant="outline-dark"
                     size="sm"
-                    href={`${API_URL}/campaigns/${campaign._id}`}
+                    href={`${API_URL}/cause/${campaign._id}`}
                   >
                     Xem thêm
                   </Button>
@@ -114,7 +119,7 @@ const CampaignListPage = () => {
               </Card>
             ))
           )}
-        </CardColumns>
+        </CardGroup>
       </Container>
     </div>
   );

@@ -18,7 +18,7 @@ Những điều tôi cố gắng làm:
 
 [] Campaign Detail Page - Public
 ----[] Mọi người đều có thể:
----------[] Xem thông tin dự án và chiến dịch
+---------[x] Xem thông tin dự án và chiến dịch
 ---------[] Thấy số lượng người đã donate và số lượng tiền đã gây được
 ---------[] Thấy danh sách người donate theo từng chiến dịch
 ----[] Donate - Member: Chỉ thành viên mới được donate
@@ -39,3 +39,4 @@ on Apr 30: 5.0 hours
 on May 1: 1.5 hours
 on May 2: 6.0 hours
 on May 17: 1.0 hour
+on May 18: 2.0 hours

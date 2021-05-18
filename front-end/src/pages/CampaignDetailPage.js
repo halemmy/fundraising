@@ -14,7 +14,7 @@ const CampaignDetailPage = () => {
     async function fetchData() {
       setLoading(true);
       try {
-        let url = `${API_URL}/campaign/${id}`;
+        let url = `${API_URL}/cause/${id}`;
         const response = await fetch(url);
         const data = await response.json();
         if (response.ok) {
